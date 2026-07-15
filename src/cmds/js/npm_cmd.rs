@@ -67,6 +67,7 @@ const NPM_SUBCOMMANDS: &[&str] = &[
     "diff",
     "rebuild",
     "test",
+    "tst",
     "t",
     "start",
     "stop",

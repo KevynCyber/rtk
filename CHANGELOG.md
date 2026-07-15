@@ -5,6 +5,13 @@ All notable changes to rtk (Rust Token Killer) will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.42.5 (2026-07-14) — fork
+
+
+### Bug Fixes
+
+* **hooks:** rewrite bare `npm test` / `npm tst` / `npm t` to `rtk npm ...` (previously only `npm run test` was rewritten, so raw test output leaked unfiltered); added `tst` to known npm subcommands so `run` isn't wrongly injected
+
 ## [0.42.4](https://github.com/rtk-ai/rtk/compare/v0.42.3...v0.42.4) (2026-06-12)
 
 

@@ -90,6 +90,20 @@ mod tests {
         );
     }
 
+    // Requirement: Bare `npm test` and its aliases (`npm tst`, `npm t`) must be
+    // auto-rewritten to `rtk npm ...` by the hook, same as `npm run test`,
+    // so test output is always token-filtered.
+    #[test]
+    fn test_rewrite_npm_test_aliases() {
+        for command in ["npm test", "npm tst", "npm t", "npm test -- --coverage"] {
+            assert_eq!(
+                rewrite_command_no_prefixes(command),
+                Some(format!("rtk {command}")),
+                "Failed for command: {command}"
+            );
+        }
+    }
+
     mod unattestable_passthrough {
         use super::super::{evaluate, RewriteOutcome};
 
